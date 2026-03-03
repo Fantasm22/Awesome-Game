@@ -1,15 +1,19 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
+
+
 
 public class Player : MonoBehaviour
 {
 
     public float moveSpeed;
-    Rigidbody rb;
+    Rigidbody2D rb;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -32,6 +36,19 @@ public class Player : MonoBehaviour
         else
         {
             rb.linearVelocity = Vector2.zero;
+        }
+    }
+
+
+
+
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag =="Block")
+        {
+            SceneManager.LoadScene("Game");
         }
     }
 }
