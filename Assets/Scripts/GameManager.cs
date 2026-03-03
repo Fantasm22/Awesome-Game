@@ -27,6 +27,11 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
             gameStarted = true;
             tapText.SetActive(false);
+
+
+
+
+
         }
 
 
