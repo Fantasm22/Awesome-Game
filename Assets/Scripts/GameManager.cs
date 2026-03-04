@@ -39,6 +39,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
     {
         gameStarted = true;
         tapText.SetActive(false);
+        highScoreText.gameObject.SetActive(false);
 
         currentSpawnRate = spawnRate;
 
@@ -66,6 +67,12 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
     void SpawnBlock()
     {
+        if (block == null)
+        {
+            Debug.LogError("The Block prefab is missing! Please drag it into the Inspector.");
+            return;
+        }
+
         Vector3 spawnPos = spawnPoint.position;
         spawnPos.x = Random.Range(-maxX, maxX);
 
