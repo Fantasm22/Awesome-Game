@@ -57,5 +57,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
         scoreText.text = score.ToString();
 
+        PlayerPrefs.SetInt("HighScore", score);
+
     }
 }
