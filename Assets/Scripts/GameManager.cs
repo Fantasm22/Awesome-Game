@@ -4,6 +4,8 @@ using UnityEngine;
 public class NewMonoBehaviourScript : MonoBehaviour
 {
 
+    [SerializeField] TextMeshProUGUI highScoreText;
+
     public GameObject block;
     public float maxX;
     public Transform spawnPoint;
@@ -38,6 +40,11 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
     }
 
+    private void Start()
+    {
+        UpdateHighScoreText();
+    }
+
 
     private void StartSpawning()
     {
@@ -56,8 +63,22 @@ public class NewMonoBehaviourScript : MonoBehaviour
         score++;
 
         scoreText.text = score.ToString();
+        CheckHighScore();
 
         PlayerPrefs.SetInt("HighScore", score);
+        PlayerPrefs.GetInt("HighScore");
+    }
 
+    void CheckHighScore()
+    {
+        if(score > PlayerPrefs.GetInt("HighScore", 0))
+        {
+            PlayerPrefs.SetInt("HighScore", score);
+        }
+    }
+
+    void UpdateHighScoreText()
+    {
+        highScoreText.text = $"HighScore: {PlayerPrefs.GetInt("HighScore", 0)}";
     }
 }
