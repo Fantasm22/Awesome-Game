@@ -1,16 +1,19 @@
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
+using System.Collections;
+
 
 public class NewMonoBehaviourScript : MonoBehaviour
 {
-
     [SerializeField] TextMeshProUGUI highScoreText;
 
     public GameObject block;
     public float maxX;
     public Transform spawnPoint;
-    public float spawnRate;
 
+    public float spawnRate = 2f;
+    private float currentSpawnRate;
+    public float minimumSpawnRate = 0.3f;
 
     bool gameStarted = false;
 
@@ -19,66 +22,85 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
     int score = 0;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-        if(Input.GetMouseButtonDown(0) && !gameStarted)
-        {
-            StartSpawning();
-
-            gameStarted = true;
-            tapText.SetActive(false);
-
-
-
-
-
-        }
-
-
-
-    }
-
     private void Start()
     {
         UpdateHighScoreText();
     }
 
-
-    private void StartSpawning()
+    void Update()
     {
-        InvokeRepeating("SpawnBlock", 0.5f, spawnRate);
+        if (Input.GetMouseButtonDown(0) && !gameStarted)
+        {
+            StartGame();
+        }
     }
 
+    void StartGame()
+    {
+        gameStarted = true;
+        tapText.SetActive(false);
 
-    private void SpawnBlock()
+        currentSpawnRate = spawnRate;
+
+        StartCoroutine(SpawnRoutine());
+        StartCoroutine(ScoreRoutine()); // 👈 starter point pr sekund
+    }
+
+    IEnumerator SpawnRoutine()
+    {
+        while (gameStarted)
+        {
+            SpawnBlock();
+            yield return new WaitForSeconds(currentSpawnRate);
+        }
+    }
+
+    IEnumerator ScoreRoutine()
+    {
+        while (gameStarted)
+        {
+            yield return new WaitForSeconds(1f);
+            AddScore();
+        }
+    }
+
+    void SpawnBlock()
     {
         Vector3 spawnPos = spawnPoint.position;
-
         spawnPos.x = Random.Range(-maxX, maxX);
 
         Instantiate(block, spawnPos, Quaternion.identity);
+    }
 
+    void AddScore()
+    {
         score++;
-
         scoreText.text = score.ToString();
         CheckHighScore();
 
-        PlayerPrefs.SetInt("HighScore", score);
-        PlayerPrefs.GetInt("HighScore");
+        // Difficulty scaling hver 10 point
+        if (score % 10 == 0)
+        {
+            currentSpawnRate -= 0.1f;
+
+            if (currentSpawnRate < minimumSpawnRate)
+            {
+                currentSpawnRate = minimumSpawnRate;
+            }
+        }
     }
 
     void CheckHighScore()
     {
-        if(score > PlayerPrefs.GetInt("HighScore", 0))
+        if (score > PlayerPrefs.GetInt("HighScore", 0))
         {
             PlayerPrefs.SetInt("HighScore", score);
+            UpdateHighScoreText();
         }
     }
 
     void UpdateHighScoreText()
     {
-        highScoreText.text = $"HighScore: {PlayerPrefs.GetInt("HighScore", 0)}";
+        highScoreText.text = "HighScore: " + PlayerPrefs.GetInt("HighScore", 0);
     }
 }

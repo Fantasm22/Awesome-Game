@@ -381,6 +381,7 @@ MonoBehaviour:
   maxX: 2.5
   spawnPoint: {fileID: 521660460}
   spawnRate: 1
+  minimumSpawnRate: 0.3
   tapText: {fileID: 1951667569}
   scoreText: {fileID: 1169223083}
 --- !u!4 &345601790
@@ -1213,7 +1214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 194bda6b52d1cf749b32753e1f51ef00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
-  moveSpeed: 0.5
+  moveSpeed: 2
 --- !u!1 &1125831872
 GameObject:
   m_ObjectHideFlags: 0

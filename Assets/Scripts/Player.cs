@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     public float moveSpeed;
     Rigidbody2D rb;
 
- 
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -18,20 +18,23 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0))
         {
             Vector3 touchPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            if(touchPos.x < 0)
+            if (touchPos.x < 0)
             {
-               rb.AddForce( Vector2.left * moveSpeed);
+                // FIX: Removed AddForce, setting velocity directly for instant speed
+                rb.linearVelocity = new Vector2(-moveSpeed, rb.linearVelocity.y);
             }
             else
             {
-                rb.AddForce(Vector2.right * moveSpeed);
+                // FIX: Removed AddForce, setting velocity directly for instant speed
+                rb.linearVelocity = new Vector2(moveSpeed, rb.linearVelocity.y);
             }
-
         }
+
+
         else
         {
             rb.linearVelocity = Vector2.zero;
@@ -43,9 +46,10 @@ public class Player : MonoBehaviour
 
 
 
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag =="Block")
+        if (collision.gameObject.tag == "Block")
         {
             SceneManager.LoadScene("Game");
         }
