@@ -1,6 +1,7 @@
 ﻿using TMPro;
 using UnityEngine;
 using System.Collections;
+using UnityEngine.InputSystem;
 
 
 public class NewMonoBehaviourScript : MonoBehaviour
@@ -29,14 +30,28 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && !gameStarted)
+        if (!gameStarted && IsScreenPressed())
         {
             StartGame();
         }
     }
 
+    bool IsScreenPressed()
+    {
+        // Touch (Android)
+        if (Touchscreen.current != null && Touchscreen.current.primaryTouch.press.wasPressedThisFrame)
+            return true;
+
+        // Mouse (Unity editor testing)
+        if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
+            return true;
+
+        return false;
+    }
+
     void StartGame()
     {
+        Application.targetFrameRate = 60;
         gameStarted = true;
         tapText.SetActive(false);
         highScoreText.gameObject.SetActive(false);
@@ -44,7 +59,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
         currentSpawnRate = spawnRate;
 
         StartCoroutine(SpawnRoutine());
-        StartCoroutine(ScoreRoutine()); // 👈 starter point pr sekund
+        StartCoroutine(ScoreRoutine());
     }
 
     IEnumerator SpawnRoutine()
@@ -94,8 +109,9 @@ public class NewMonoBehaviourScript : MonoBehaviour
             {
                 currentSpawnRate = minimumSpawnRate;
             }
-        }
+            }
     }
+
 
     void CheckHighScore()
     {

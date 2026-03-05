@@ -1,55 +1,53 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 
 
 
 public class Player : MonoBehaviour
 {
+    public float moveSpeed = 6f;
 
-    public float moveSpeed;
-    Rigidbody2D rb;
+    private Rigidbody2D rb;
 
-
-    void Start()
+    void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
-        if (Input.GetMouseButton(0))
-        {
-            Vector3 touchPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        float direction = 0;
 
-            if (touchPos.x < 0)
-            {
-                // FIX: Removed AddForce, setting velocity directly for instant speed
-                rb.linearVelocity = new Vector2(-moveSpeed, rb.linearVelocity.y);
-            }
+        // Touch (Android)
+        if (Touchscreen.current != null && Touchscreen.current.primaryTouch.press.isPressed)
+        {
+            float touchX = Touchscreen.current.primaryTouch.position.ReadValue().x;
+
+            if (touchX < Screen.width / 2)
+                direction = -1;
             else
-            {
-                // FIX: Removed AddForce, setting velocity directly for instant speed
-                rb.linearVelocity = new Vector2(moveSpeed, rb.linearVelocity.y);
-            }
+                direction = 1;
         }
 
-
-        else
+        // Mouse (testing i Unity editor)
+        else if (Mouse.current != null && Mouse.current.leftButton.isPressed)
         {
-            rb.linearVelocity = Vector2.zero;
+            float mouseX = Mouse.current.position.ReadValue().x;
+
+            if (mouseX < Screen.width / 2)
+                direction = -1;
+            else
+                direction = 1;
         }
+
+        rb.linearVelocity = new Vector2(direction * moveSpeed, rb.linearVelocity.y);
     }
 
-
-
-
-
-
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Block")
+        if (collision.gameObject.CompareTag("Block"))
         {
             SceneManager.LoadScene("Game");
         }
