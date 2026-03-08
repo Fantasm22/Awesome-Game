@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 87110503955462555}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.121, y: -2.89, z: 0}
+  m_LocalPosition: {x: 0.121, y: -2.949, z: 0}
   m_LocalScale: {x: 4.241708, y: 3.9922569, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -180,6 +180,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76bb270a10ae6bb46a4946f7eefd97b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Block
+  breakEffectPrefab: {fileID: 8688997760826070817, guid: 0e0e12c72069ff8488c2d33ed523282b, type: 3}
+  fallbackEffectDuration: 1
 --- !u!1 &4607533203061866740
 GameObject:
   m_ObjectHideFlags: 0

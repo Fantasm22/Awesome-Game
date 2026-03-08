@@ -4,9 +4,7 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - Destinatian: {instanceID: 0}
-  - SmokePlace: {instanceID: 0}
-  - SmokeAnim: {instanceID: 0}
+  - breakEffectPrefab: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
