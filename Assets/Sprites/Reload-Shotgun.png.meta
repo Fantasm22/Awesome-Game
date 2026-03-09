@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: d2d7fc3af9563124ca10ced0a121b784
+guid: bfefcde0269b304438f3fd2bba7eb235
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6967740211278417626
-    second: Mand_0
+      213: 868467450975107599
+    second: Reload-Shotgun_0
+  - first:
+      213: -2590888375981178236
+    second: Reload-Shotgun_1
+  - first:
+      213: 7275752353769216649
+    second: Reload-Shotgun_2
+  - first:
+      213: 2602648693983750243
+    second: Reload-Shotgun_3
+  - first:
+      213: 3286492148957927209
+    second: Reload-Shotgun_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +49,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +63,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 38
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -126,13 +138,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mand_0
+      name: Reload-Shotgun_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 2
-        width: 13
-        height: 15
+        x: 0
+        y: 0
+        width: 38
+        height: 38
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +153,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ade84743ec262b060800000000000000
-      internalID: 6967740211278417626
+      spriteID: f0a3c5a9b8a6d0c00800000000000000
+      internalID: 868467450975107599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reload-Shotgun_1
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 0
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48204f8cfb05b0cd0800000000000000
+      internalID: -2590888375981178236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reload-Shotgun_2
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 0
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98a5028973aa8f460800000000000000
+      internalID: 7275752353769216649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reload-Shotgun_3
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 0
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3682900a2377e1420800000000000000
+      internalID: 2602648693983750243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reload-Shotgun_4
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 0
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9275fb76237fb9d20800000000000000
+      internalID: 3286492148957927209
       vertices: []
       indices: 
       edges: []
@@ -151,7 +251,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 846ef3a4445536846b4e472553856fe1
+    spriteID: 6f7a3ba6512ed414089696c72e539894
     internalID: 0
     vertices: []
     indices: 
@@ -159,9 +259,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":38.0,"y":38.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Mand_0: 6967740211278417626
+      Reload-Shotgun_0: 868467450975107599
+      Reload-Shotgun_1: -2590888375981178236
+      Reload-Shotgun_2: 7275752353769216649
+      Reload-Shotgun_3: 2602648693983750243
+      Reload-Shotgun_4: 3286492148957927209
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
