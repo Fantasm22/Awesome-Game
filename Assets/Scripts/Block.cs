@@ -29,7 +29,7 @@ public class Block : MonoBehaviour
 
         // Instantiate ved blockens position (z sættes så animation ligger synligt)
         Vector3 spawnPos = transform.position;
-        spawnPos.y += 0.59f;
+        spawnPos.y += 0.31f;
         // Hvis du arbejder i 2D, kan du sikre z = 0 eller -1 så den vises over/under korrekt
         spawnPos.z = 0f;
 

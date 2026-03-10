@@ -327,7 +327,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 9.125129, y: 1.47}
+  m_Size: {x: 9.125129, y: 1.4551303}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -341,7 +341,7 @@ Transform:
   m_GameObject: {fileID: 79261801}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.7205, y: -3.43, z: 0}
+  m_LocalPosition: {x: 0.07, y: -3.44, z: 0}
   m_LocalScale: {x: 2.3429637, y: 2.511681, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -377,6 +377,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
   highScoreText: {fileID: 72398321}
+  sequenceAnimator: {fileID: 1537983178}
   block: {fileID: 87110503955462555, guid: cf5f612b90aad18429da024a3160ffe0, type: 3}
   maxX: 2.5
   spawnPoint: {fileID: 521660460}
@@ -444,6 +445,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -538,7 +540,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 4.90625
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -569,6 +571,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c88f5cead0c0b2a4eb05b5900433f8d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.2D.Runtime::UnityEngine.Rendering.Universal.PixelPerfectCamera
+  m_ComponentVersion: 1
+  m_AssetsPPU: 48
+  m_RefResolutionX: 265
+  m_RefResolutionY: 471
+  m_CropFrame: 0
+  m_GridSnapping: 2
+  m_FilterMode: 0
+  m_UpscaleRT: 0
+  m_PixelSnapping: 0
+  m_CropFrameX: 0
+  m_CropFrameY: 0
+  m_StretchFill: 0
 --- !u!1 &521660459
 GameObject:
   m_ObjectHideFlags: 0
@@ -670,8 +696,8 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 2
-  m_Size: {x: 7.802296, y: 2.7}
+  m_DrawMode: 0
+  m_Size: {x: 7.802296, y: 3.3730583}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -685,8 +711,8 @@ Transform:
   m_GameObject: {fileID: 522356406}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.7384, y: -0.79, z: 0}
-  m_LocalScale: {x: 2.7292817, y: 0.62175876, z: 1}
+  m_LocalPosition: {x: -0.07, y: 0.1524, z: 0}
+  m_LocalScale: {x: 3.7153792, y: 1.3733344, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1014,8 +1040,8 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 2
-  m_Size: {x: 7.829461, y: 2.6998687}
+  m_DrawMode: 0
+  m_Size: {x: 7.829461, y: 2.644052}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1029,8 +1055,8 @@ Transform:
   m_GameObject: {fileID: 634027111}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.77, y: 2.5301, z: 0}
-  m_LocalScale: {x: 2.7163417, y: 1.8375815, z: 1}
+  m_LocalPosition: {x: -0.04, y: 3.4251, z: 0}
+  m_LocalScale: {x: 3.7283149, y: 1.1653423, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1379,7 +1405,7 @@ Transform:
   m_GameObject: {fileID: 1103049216}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.06, y: -3.9882, z: 0}
+  m_LocalPosition: {x: 0.10999951, y: -3.960045, z: 0}
   m_LocalScale: {x: 2.556341, y: 2.8261619, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1626,7 +1652,7 @@ GameObject:
   - component: {fileID: 1537983179}
   - component: {fileID: 1537983178}
   m_Layer: 0
-  m_Name: Pew-Pew_0
+  m_Name: Pew-Pew
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1721,13 +1747,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1537983177}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.24, y: -1.48, z: 0}
-  m_LocalScale: {x: 2.6946568, y: 2.6946568, z: 2.6946568}
+  m_LocalRotation: {x: -0, y: -0, z: 0.0060490733, w: 0.9999817}
+  m_LocalPosition: {x: 5.97, y: -3.34, z: 0}
+  m_LocalScale: {x: 1.0748986, y: 1.0748986, z: 1.0748986}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.693}
 --- !u!1 &1883197413
 GameObject:
   m_ObjectHideFlags: 0

@@ -129,9 +129,9 @@ TextureImporter:
       name: Smoke 7 (1)_0
       rect:
         serializedVersion: 2
-        x: 2
+        x: 0
         y: 0
-        width: 248
+        width: 250
         height: 333
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -151,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: c9763d7b63fba3647864590cb089ac0a
+    spriteID: acbd7676ca5c77f438d4831188ac1c43
     internalID: 0
     vertices: []
     indices: 
