@@ -8,6 +8,8 @@ public class NewMonoBehaviourScript : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI highScoreText;
 
+    public Animator sequenceAnimator;
+
     public GameObject block;
     public float maxX;
     public Transform spawnPoint;
@@ -25,6 +27,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
     private void Start()
     {
+        sequenceAnimator.enabled = false;
         UpdateHighScoreText();
     }
 
@@ -57,6 +60,9 @@ public class NewMonoBehaviourScript : MonoBehaviour
         highScoreText.gameObject.SetActive(false);
 
         currentSpawnRate = spawnRate;
+
+        sequenceAnimator.enabled = true;
+        sequenceAnimator.Play("Animation1", 0, 0f);
 
         StartCoroutine(SpawnRoutine());
         StartCoroutine(ScoreRoutine());

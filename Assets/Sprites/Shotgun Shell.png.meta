@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e34c6666ce6f5e8429b9b2ffdde1e7a0
+guid: dda89d9fb53db60499befbf18fe0db8b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 268897308926801551
-    second: Smoke 1 (1)_0
+      213: 1031591969239676913
+    second: Shotgun Shell_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -47,11 +47,11 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 12
+  spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 38
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,7 +100,7 @@ TextureImporter:
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 47
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -126,23 +126,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Smoke 1 (1)_0
+      name: Shotgun Shell_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 250
-        height: 333
+        x: 5
+        y: 10
+        width: 18
+        height: 11
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f86f3a38da05bb300800000000000000
-      internalID: 268897308926801551
+      spriteID: 1f73daf2e63f05e00800000000000000
+      internalID: 1031591969239676913
       vertices: []
       indices: 
       edges: []
@@ -151,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: ad2048d7c36f423428ecbcc67d0dfb32
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Smoke 1 (1)_0: 268897308926801551
+      Shotgun Shell_0: 1031591969239676913
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
