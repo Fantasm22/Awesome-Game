@@ -37,15 +37,18 @@ public class NewMonoBehaviourScript : MonoBehaviour
         {
             StartGame();
         }
+
+        if (gameStarted)
+        {
+            RotateTowardsNearestBlock();
+        }
     }
 
     bool IsScreenPressed()
     {
-        // Touch (Android)
         if (Touchscreen.current != null && Touchscreen.current.primaryTouch.press.wasPressedThisFrame)
             return true;
 
-        // Mouse (Unity editor testing)
         if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
             return true;
 
@@ -106,7 +109,6 @@ public class NewMonoBehaviourScript : MonoBehaviour
         scoreText.text = score.ToString();
         CheckHighScore();
 
-        // Difficulty scaling hver 10 point
         if (score % 10 == 0)
         {
             currentSpawnRate -= 0.1f;
@@ -115,7 +117,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
             {
                 currentSpawnRate = minimumSpawnRate;
             }
-            }
+        }
     }
 
 
@@ -131,5 +133,34 @@ public class NewMonoBehaviourScript : MonoBehaviour
     void UpdateHighScoreText()
     {
         highScoreText.text = "HighScore: " + PlayerPrefs.GetInt("HighScore", 0);
+    }
+
+
+    // TURRET SYSTEM
+    void RotateTowardsNearestBlock()
+    {
+        GameObject[] blocks = GameObject.FindGameObjectsWithTag("Block");
+
+        if (blocks.Length == 0)
+            return;
+
+        GameObject nearestBlock = blocks[0];
+        float shortestDistance = Vector2.Distance(transform.position, nearestBlock.transform.position);
+
+        foreach (GameObject b in blocks)
+        {
+            float distance = Vector2.Distance(transform.position, b.transform.position);
+
+            if (distance < shortestDistance)
+            {
+                nearestBlock = b;
+                shortestDistance = distance;
+            }
+        }
+
+        Vector2 direction = nearestBlock.transform.position - transform.position;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+        transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 }
