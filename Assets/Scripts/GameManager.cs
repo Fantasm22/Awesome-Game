@@ -1,7 +1,9 @@
-﻿using TMPro;
+﻿using System.Collections;
+using TMPro;
 using UnityEngine;
-using System.Collections;
+
 using UnityEngine.InputSystem;
+using static UnityEngine.GraphicsBuffer;
 
 
 public class NewMonoBehaviourScript : MonoBehaviour
@@ -22,6 +24,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
     public GameObject tapText;
     public TextMeshProUGUI scoreText;
+    public Transform turretGun;
 
     int score = 0;
 
@@ -145,11 +148,14 @@ public class NewMonoBehaviourScript : MonoBehaviour
             return;
 
         GameObject nearestBlock = blocks[0];
-        float shortestDistance = Vector2.Distance(transform.position, nearestBlock.transform.position);
+        Vector2 turretPos2 = new Vector2(turretGun.position.x, turretGun.position.y);
+        Vector2 nearestPos2 = new Vector2(nearestBlock.transform.position.x, nearestBlock.transform.position.y);
+        float shortestDistance = Vector2.Distance(turretPos2, nearestPos2);
 
         foreach (GameObject b in blocks)
         {
-            float distance = Vector2.Distance(transform.position, b.transform.position);
+            Vector2 bPos2 = new Vector2(b.transform.position.x, b.transform.position.y);
+            float distance = Vector2.Distance(turretPos2, bPos2);
 
             if (distance < shortestDistance)
             {
@@ -158,9 +164,10 @@ public class NewMonoBehaviourScript : MonoBehaviour
             }
         }
 
-        Vector2 direction = nearestBlock.transform.position - transform.position;
+        Vector2 direction = new Vector2(nearestBlock.transform.position.x - turretGun.position.x,
+                                        nearestBlock.transform.position.y - turretGun.position.y);
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-        transform.rotation = Quaternion.Euler(0, 0, angle);
+        turretGun.rotation = Quaternion.Euler(0f, 0f, angle);
     }
 }
