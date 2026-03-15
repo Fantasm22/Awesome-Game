@@ -40,13 +40,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
         {
             StartGame();
         }
-
-        if (gameStarted)
-        {
-            RotateTowardsNearestBlock();
-        }
     }
-
     bool IsScreenPressed()
     {
         if (Touchscreen.current != null && Touchscreen.current.primaryTouch.press.wasPressedThisFrame)
@@ -138,36 +132,4 @@ public class NewMonoBehaviourScript : MonoBehaviour
         highScoreText.text = "HighScore: " + PlayerPrefs.GetInt("HighScore", 0);
     }
 
-
-    // TURRET SYSTEM
-    void RotateTowardsNearestBlock()
-    {
-        GameObject[] blocks = GameObject.FindGameObjectsWithTag("Block");
-
-        if (blocks.Length == 0)
-            return;
-
-        GameObject nearestBlock = blocks[0];
-        Vector2 turretPos2 = new Vector2(turretGun.position.x, turretGun.position.y);
-        Vector2 nearestPos2 = new Vector2(nearestBlock.transform.position.x, nearestBlock.transform.position.y);
-        float shortestDistance = Vector2.Distance(turretPos2, nearestPos2);
-
-        foreach (GameObject b in blocks)
-        {
-            Vector2 bPos2 = new Vector2(b.transform.position.x, b.transform.position.y);
-            float distance = Vector2.Distance(turretPos2, bPos2);
-
-            if (distance < shortestDistance)
-            {
-                nearestBlock = b;
-                shortestDistance = distance;
-            }
-        }
-
-        Vector2 direction = new Vector2(nearestBlock.transform.position.x - turretGun.position.x,
-                                        nearestBlock.transform.position.y - turretGun.position.y);
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-
-        turretGun.rotation = Quaternion.Euler(0f, 0f, angle);
-    }
 }
